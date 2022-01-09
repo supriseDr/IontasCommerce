@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eec547fb0745178c455569f580742e82",
+    "content-hash": "e884214bb42dcd9b64a691d97ca4ebd3",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1032,6 +1032,57 @@
             "time": "2021-10-25T19:59:10+00:00"
         },
         {
+            "name": "fzaninotto/faker",
+            "version": "v1.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
+                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^2.9.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "abandoned": true,
+            "time": "2020-12-11T09:56:16+00:00"
+        },
+        {
             "name": "illuminate/bus",
             "version": "v8.78.1",
             "source": {
@@ -1529,6 +1580,250 @@
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
             "time": "2021-12-16T19:23:48+00:00"
+        },
+        {
+            "name": "improved/iterable",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/improved-php-library/iterable.git",
+                "reference": "4ab425f587708b4632c8f06b9cdce2cad959fa80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/improved-php-library/iterable/zipball/4ab425f587708b4632c8f06b9cdce2cad959fa80",
+                "reference": "4ab425f587708b4632c8f06b9cdce2cad959fa80",
+                "shasum": ""
+            },
+            "require": {
+                "improved/type": "~0.1.0",
+                "php": ">=7.2.0"
+            },
+            "provide": {
+                "ext-improved_iterable": "*"
+            },
+            "require-dev": {
+                "jasny/php-code-quality": "~2.3",
+                "phpstan/phpstan": "~0.11.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Improved\\Iterator\\": "src/Iterator/",
+                    "Improved\\IteratorPipeline\\": "src/IteratorPipeline/"
+                },
+                "files": [
+                    "src/functions-const.php",
+                    "src/functions/iterable_after.php",
+                    "src/functions/iterable_apply.php",
+                    "src/functions/iterable_average.php",
+                    "src/functions/iterable_after.php",
+                    "src/functions/iterable_before.php",
+                    "src/functions/iterable_chunk.php",
+                    "src/functions/iterable_cleanup.php",
+                    "src/functions/iterable_column.php",
+                    "src/functions/iterable_concat.php",
+                    "src/functions/iterable_count.php",
+                    "src/functions/iterable_expect_type.php",
+                    "src/functions/iterable_fill.php",
+                    "src/functions/iterable_filter.php",
+                    "src/functions/iterable_find.php",
+                    "src/functions/iterable_find_key.php",
+                    "src/functions/iterable_first.php",
+                    "src/functions/iterable_flatten.php",
+                    "src/functions/iterable_flip.php",
+                    "src/functions/iterable_group.php",
+                    "src/functions/iterable_has_all.php",
+                    "src/functions/iterable_has_any.php",
+                    "src/functions/iterable_has_none.php",
+                    "src/functions/iterable_keys.php",
+                    "src/functions/iterable_last.php",
+                    "src/functions/iterable_map_keys.php",
+                    "src/functions/iterable_map.php",
+                    "src/functions/iterable_max.php",
+                    "src/functions/iterable_min.php",
+                    "src/functions/iterable_project.php",
+                    "src/functions/iterable_reduce.php",
+                    "src/functions/iterable_reshape.php",
+                    "src/functions/iterable_reverse.php",
+                    "src/functions/iterable_separate.php",
+                    "src/functions/iterable_slice.php",
+                    "src/functions/iterable_sort_keys.php",
+                    "src/functions/iterable_sort.php",
+                    "src/functions/iterable_sum.php",
+                    "src/functions/iterable_to_array.php",
+                    "src/functions/iterable_to_iterator.php",
+                    "src/functions/iterable_to_traversable.php",
+                    "src/functions/iterable_type_check.php",
+                    "src/functions/iterable_type_cast.php",
+                    "src/functions/iterable_unique.php",
+                    "src/functions/iterable_unwind.php",
+                    "src/functions/iterable_values.php",
+                    "src/functions/iterable_walk.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnold Daniels",
+                    "email": "arnold@jasny.net",
+                    "homepage": "http://www.jasny.net"
+                }
+            ],
+            "description": "Functions to interact with arrays, iterators and other traversable objects",
+            "time": "2019-06-06T02:25:16+00:00"
+        },
+        {
+            "name": "improved/type",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/improved-php-library/type.git",
+                "reference": "553f6ab8a45d25f56864a00afb30afb2f7272e4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/improved-php-library/type/zipball/553f6ab8a45d25f56864a00afb30afb2f7272e4b",
+                "reference": "553f6ab8a45d25f56864a00afb30afb2f7272e4b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "jasny/php-code-quality": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions-const.php",
+                    "src/functions/internal/type_cast_var.php",
+                    "src/functions/internal/type_check_error.php",
+                    "src/functions/internal/type_describe_type.php",
+                    "src/functions/internal/type_describe_value.php",
+                    "src/functions/internal/type_is_internal_func.php",
+                    "src/functions/internal/type_join_descriptions.php",
+                    "src/functions/type_check.php",
+                    "src/functions/type_cast.php",
+                    "src/functions/type_describe.php",
+                    "src/functions/type_is.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnold Daniels",
+                    "email": "arnold@jasny.net",
+                    "homepage": "http://www.jasny.net"
+                }
+            ],
+            "description": "Type handling",
+            "time": "2019-02-20T21:41:34+00:00"
+        },
+        {
+            "name": "jasny/auth",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jasny/auth.git",
+                "reference": "6b0f95118772710dd7a139f5c25ff4572725d9cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jasny/auth/zipball/6b0f95118772710dd7a139f5c25ff4572725d9cc",
+                "reference": "6b0f95118772710dd7a139f5c25ff4572725d9cc",
+                "shasum": ""
+            },
+            "require": {
+                "improved/iterable": "^0.1.4",
+                "jasny/immutable": "^2.1",
+                "nesbot/carbon": "^2.27",
+                "php": ">=7.4.0",
+                "psr/event-dispatcher": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0",
+                "psr/http-server-middleware": "^1.0",
+                "psr/log": "^1.1"
+            },
+            "conflict": {
+                "hashids/hashids": "< 2.0",
+                "lcobucci/jwt": "< 3.4"
+            },
+            "require-dev": {
+                "hashids/hashids": "^2.0 | ^3.0 | ^4.0",
+                "jasny/php-code-quality": "~2.7.0",
+                "lcobucci/jwt": "^3.4 | ^4.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jasny\\Auth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnold Daniels",
+                    "email": "arnold@jasny.net",
+                    "homepage": "http://www.jasny.net"
+                }
+            ],
+            "description": "Authentication and authorization",
+            "homepage": "https://www.jasny.net/auth",
+            "keywords": [
+                "auth"
+            ],
+            "time": "2021-02-08T01:53:22+00:00"
+        },
+        {
+            "name": "jasny/immutable",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jasny/immutable.git",
+                "reference": "1a4ffb42bea73ea5d318f39b3a5dd283aec063f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jasny/immutable/zipball/1a4ffb42bea73ea5d318f39b3a5dd283aec063f9",
+                "reference": "1a4ffb42bea73ea5d318f39b3a5dd283aec063f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "jasny/php-code-quality": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jasny\\Immutable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnold Daniels",
+                    "email": "arnold@jasny.net",
+                    "homepage": "http://www.jasny.net"
+                }
+            ],
+            "description": "Helper methods for immutable objects",
+            "time": "2020-01-27T09:41:29+00:00"
         },
         {
             "name": "jenssegers/blade",
@@ -2190,6 +2485,52 @@
             "time": "2021-11-05T16:50:12+00:00"
         },
         {
+            "name": "psr/event-dispatcher",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/event-dispatcher.git",
+                "reference": "dbefd12671e8a14ec7f180cab83036ed26714bb0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/event-dispatcher/zipball/dbefd12671e8a14ec7f180cab83036ed26714bb0",
+                "reference": "dbefd12671e8a14ec7f180cab83036ed26714bb0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\EventDispatcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Standard interfaces for event handling.",
+            "keywords": [
+                "events",
+                "psr",
+                "psr-14"
+            ],
+            "time": "2019-01-08T18:20:26+00:00"
+        },
+        {
             "name": "psr/http-factory",
             "version": "1.0.1",
             "source": {
@@ -2491,6 +2832,176 @@
                 "simple-cache"
             ],
             "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
+            "name": "symfony/cache",
+            "version": "v5.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/cache.git",
+                "reference": "8aad4b69a10c5c51ab54672e78995860f5e447ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/8aad4b69a10c5c51ab54672e78995860f5e447ec",
+                "reference": "8aad4b69a10c5c51ab54672e78995860f5e447ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/cache": "^1.0|^2.0",
+                "psr/log": "^1.1|^2|^3",
+                "symfony/cache-contracts": "^1.1.7|^2",
+                "symfony/deprecation-contracts": "^2.1|^3",
+                "symfony/polyfill-php73": "^1.9",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/service-contracts": "^1.1|^2|^3",
+                "symfony/var-exporter": "^4.4|^5.0|^6.0"
+            },
+            "conflict": {
+                "doctrine/dbal": "<2.13.1",
+                "symfony/dependency-injection": "<4.4",
+                "symfony/http-kernel": "<4.4",
+                "symfony/var-dumper": "<4.4"
+            },
+            "provide": {
+                "psr/cache-implementation": "1.0|2.0",
+                "psr/simple-cache-implementation": "1.0|2.0",
+                "symfony/cache-implementation": "1.0|2.0"
+            },
+            "require-dev": {
+                "cache/integration-tests": "dev-master",
+                "doctrine/cache": "^1.6|^2.0",
+                "doctrine/dbal": "^2.13.1|^3.0",
+                "predis/predis": "^1.1",
+                "psr/simple-cache": "^1.0|^2.0",
+                "symfony/config": "^4.4|^5.0|^6.0",
+                "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+                "symfony/filesystem": "^4.4|^5.0|^6.0",
+                "symfony/http-kernel": "^4.4|^5.0|^6.0",
+                "symfony/messenger": "^4.4|^5.0|^6.0",
+                "symfony/var-dumper": "^4.4|^5.0|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Cache\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an extended PSR-6, PSR-16 (and tags) implementation",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "caching",
+                "psr6"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-12-28T17:15:56+00:00"
+        },
+        {
+            "name": "symfony/cache-contracts",
+            "version": "v2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/cache-contracts.git",
+                "reference": "ac2e168102a2e06a2624f0379bde94cd5854ced2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/ac2e168102a2e06a2624f0379bde94cd5854ced2",
+                "reference": "ac2e168102a2e06a2624f0379bde94cd5854ced2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/cache": "^1.0|^2.0|^3.0"
+            },
+            "suggest": {
+                "symfony/cache-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.5-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\Cache\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to caching",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-08-17T14:20:01+00:00"
         },
         {
             "name": "symfony/console",
@@ -3586,6 +4097,115 @@
                 }
             ],
             "time": "2021-08-17T14:20:01+00:00"
+        },
+        {
+            "name": "symfony/var-exporter",
+            "version": "v5.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-exporter.git",
+                "reference": "2360c8525815b8535caac27cbc1994e2fa8644ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/2360c8525815b8535caac27cbc1994e2fa8644ba",
+                "reference": "2360c8525815b8535caac27cbc1994e2fa8644ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "require-dev": {
+                "symfony/var-dumper": "^4.4.9|^5.0.9|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\VarExporter\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Allows exporting any serializable PHP data structure to plain PHP code",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "clone",
+                "construct",
+                "export",
+                "hydrate",
+                "instantiate",
+                "serialize"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-12-16T21:58:21+00:00"
+        },
+        {
+            "name": "tebazil/db-seeder",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tebazil/db-seeder.git",
+                "reference": "13d322a9397654946c5f3e0ec6d163e714850f77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tebazil/db-seeder/zipball/13d322a9397654946c5f3e0ec6d163e714850f77",
+                "reference": "13d322a9397654946c5f3e0ec6d163e714850f77",
+                "shasum": ""
+            },
+            "require": {
+                "fzaninotto/faker": "^1.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "tebazil\\dbseeder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Vasiliy Baukin",
+                    "email": "vasiliy.baukin@gmail.com"
+                }
+            ],
+            "description": "Simple to use PHP db seeding tool that uses faker generators",
+            "time": "2021-11-19T18:13:46+00:00"
         },
         {
             "name": "voku/portable-ascii",

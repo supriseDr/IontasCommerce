@@ -27,6 +27,38 @@ use Laminas\Diactoros\ServerRequestFactory;
 
 use League\Route\Router;
 
+// Doctrine Relational Object Models
+use Doctrine\ORM\Tools\Setup;
+
+use Doctrine\ORM\EntityManager;
+
+// Set Up Jasny for Auth
+use Jasny\Auth\Auth;
+
+use Jasny\Auth\Authz\Levels;
+
+/**Configure Doctrine ORM */
+$isDevMode = true;
+
+$proxyDir = null;
+
+$cache = null;
+
+$useSimpleAnnotationReader = false;
+
+$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/models"), $isDevMode,$proxyDir, $cache, $useSimpleAnnotationReader);
+
+//connect to sqlite for now
+
+$conn = array(
+  'driver' => 'pdo_sqlite',
+  'path' => __DIR__ . '/database/db.sqlite',
+);
+
+// obtaining the entity manager and use it on dependency injection
+
+$entityManager = EntityManager::create($conn, $config);
+
 /** 
  * Set blade views dir and cache dir
  */
@@ -39,8 +71,10 @@ use League\Route\Router;
 
 $container = new League\Container\Container;
 
-$container->add(Iontas\Commerce\Controllers\indexController::class)->addArgument($blade);
-$container->add(Iontas\Commerce\Controllers\singleItemController::class)->addArgument($blade);
+$container->add(Iontas\Commerce\Controllers\indexController::class)->addArgument($blade)->addArgument($entityManager);
+$container->add(Iontas\Commerce\Controllers\singleItemController::class)->addArgument($blade)->addArgument($entityManager);
+$container->add(Iontas\Commerce\Controllers\signInController::class)->addArgument($blade)->addArgument($entityManager);
+$container->add(Iontas\Commerce\Controllers\signUpController::class)->addArgument($blade)->addArgument($entityManager);
 
 $strategy = (new ApplicationStrategy)->setContainer($container);
  
@@ -57,3 +91,8 @@ $request = ServerRequestFactory::fromGlobals(
 /**Bootstraping application routes */
 
 require_once __DIR__.'/routes.php';
+
+/**
+ * Require faker
+ */
+$faker = Faker\Factory::create();

@@ -6,7 +6,9 @@
     <body>  
     {{--navbar component--}}
     @include('./components/navbar')
+    {{--Products List Front End--}}
     @include('./components/products-list')
         <h1 class="text-3xl font-bold underline">    Hello {{$foo}} ! </h1>
+
     </body>
 </html>
