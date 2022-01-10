@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 //Namespace
-namespace Iontas\Commerce\Controllers;
+namespace Iontas\Commerce\Admin\Controllers;
 
 //Routing Interfaces
 use Psr\Http\Message\ResponseInterface;
@@ -40,7 +40,13 @@ class indexController
 
     protected $productRepository;
 
-     /**
+    /**
+     * Users Repository
+     */
+
+    protected $userRepository;
+
+    /**
      * Authentication
      */
 
@@ -57,7 +63,10 @@ class indexController
 
         $this->productRepository = $this->entityManager->getRepository('Iontas\Commerce\Models\Product');
 
+        $this->userRepository = $this->entityManager->getRepository('Iontas\Commerce\Models\User');
+
         $this->auth = $auth;
+
 
     }
 
@@ -72,12 +81,15 @@ class indexController
     {
         /**Store Products in Array and Pass them to the front */
 
-        //$products = $this->productRepository->findAll();
-        $products = $this->productRepository->findBy(['active' => 1]);
+        $products = $this->productRepository->findAll();
+       // $products = $this->productRepository->findBy(['active' => 1]); For front-end
+
+        $users = $this->userRepository->findAll();
+
 
         // ...
         $response = new Response;
-        $response->getBody()->write($this->blade->make('homepage',['foo'=>'bar','products'=>$products,'auth'=>$this->auth])->render());
+        $response->getBody()->write($this->blade->make('admin.index',['products'=>$products,'users'=>$users, 'auth'=>$this->auth])->render());
         return $response;
 
     }

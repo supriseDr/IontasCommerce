@@ -13,12 +13,12 @@ use Jasny\Auth\UserInterface;
 final class BasicUser implements UserInterface
 {
     /** @var string|int */
-    public $id;
+    public $id ; //need to change afterwards
 
     protected string $hashedPassword = '';
 
     /** @var string|int */
-    public $role;
+    public $role ;
 
     /**
      * @inheritDoc
@@ -66,7 +66,7 @@ final class BasicUser implements UserInterface
      * @phpstan-param array<string,mixed> $data
      * @phpstan-return self
      */
-    public static function fromData(array $data): self
+    public static function fromData( $data): self
     {
         $user = new self();
 

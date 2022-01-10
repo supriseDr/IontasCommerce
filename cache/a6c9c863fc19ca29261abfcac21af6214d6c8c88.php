@@ -84,12 +84,16 @@
           </div>
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <a href="/sign-in" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-            Sign in
-          </a>
-          <a href="/sign-up" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-            Sign up
-          </a>
+          <?php if($auth->isLoggedIn() !== true ): ?>
+            <a href="/sign-in" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+              Sign in
+            </a>
+            <a href="/sign-up" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+              Sign up
+            </a>
+          <?php else: ?>
+            <p> <?php echo e($auth->user()->getAuthId()); ?> </p>
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -202,6 +206,7 @@
             </a>
           </div>
           <div>
+
             <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
               Sign up
             </a>
@@ -210,6 +215,7 @@
               <a href="#" class="text-indigo-600 hover:text-indigo-500">
                 Sign in
               </a>
+              
             </p>
           </div>
         </div>

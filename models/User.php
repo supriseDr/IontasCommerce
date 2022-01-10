@@ -11,14 +11,22 @@ namespace Iontas\Commerce\Models;
 
 use Doctrine\ORM\Mapping as ORM;
 use Illuminate\Support\Facades\Date;
+use Jasny\Auth\ContextInterface;
+use Jasny\Auth\UserInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="users")
  */
 
- class User
+ class User implements UserInterface
  {
+
+    /**
+     * @ORM\Column(type="string")
+     */
+
+    private $accessLevel = 1;
 
     /**
      * @ORM\Id
@@ -38,7 +46,13 @@ use Illuminate\Support\Facades\Date;
      * @ORM\Column(type="string")
      */
 
-    private $password;
+    private $username;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+
+    private $hashedPassword;
 
     /**
      * @ORM\Column(type="datetime")
@@ -56,6 +70,38 @@ use Illuminate\Support\Facades\Date;
         return $this->id;
     }
 
+    // Auth Id
+    public function getAuthId(): string
+    {
+        return (string) $this->id;
+    }
+
+    public function verifyPassword(string $password): bool
+    {
+        return password_verify($password, $this->hashedPassword);
+
+       //return true;
+    }
+
+    public function getAuthChecksum(): string
+    {
+        return hash('sha256', $this->id . $this->hashedPassword);
+    }
+
+    public function getAuthRole(?ContextInterface $context = null)
+    {
+        return (int) $this->accessLevel;
+    }
+
+    public function setAccessLevel(int $accessLevel):void{
+        $this->accessLevel = $accessLevel;
+    }
+
+    public function requiresMfa() : bool
+    {
+        return false;
+    }
+
     // get user email
 
     public function getEmail(): string
@@ -70,19 +116,35 @@ use Illuminate\Support\Facades\Date;
         $this->email = $email;
     }
 
+      // get user email
+
+      public function getUsername(): string
+      {
+          return $this->username;
+      }
+  
+      // set user email
+  
+      public function setUsername(string $username):void{
+  
+          $this->username = $username;
+      }
+
 
     // set user password
 
     public function setPassword(string $password):void{
 
-        $this->password = $password;
+        $this->hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        //$this->password = $password;
+
     }
 
      // get user password
 
      public function getPassword(): string
      {
-         return $this->password;
+         return $this->hashedPassword;
      }
 
 

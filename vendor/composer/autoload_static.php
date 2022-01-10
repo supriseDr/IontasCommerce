@@ -155,8 +155,10 @@ class ComposerStaticInit52e9ad5cdf07e807128cd036dfbc2e5a
         ),
         'I' => 
         array (
+            'Iontas\\Commerce\\Models\\Repository\\' => 34,
             'Iontas\\Commerce\\Models\\' => 23,
             'Iontas\\Commerce\\Controllers\\' => 28,
+            'Iontas\\Commerce\\Admin\\Controllers\\' => 34,
             'Improved\\Iterator\\' => 18,
             'Improved\\IteratorPipeline\\' => 26,
             'Illuminate\\View\\' => 16,
@@ -332,6 +334,10 @@ class ComposerStaticInit52e9ad5cdf07e807128cd036dfbc2e5a
         array (
             0 => __DIR__ . '/..' . '/jasny/auth/src',
         ),
+        'Iontas\\Commerce\\Models\\Repository\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/models/repositories',
+        ),
         'Iontas\\Commerce\\Models\\' => 
         array (
             0 => __DIR__ . '/../..' . '/models',
@@ -339,6 +345,10 @@ class ComposerStaticInit52e9ad5cdf07e807128cd036dfbc2e5a
         'Iontas\\Commerce\\Controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/controllers',
+        ),
+        'Iontas\\Commerce\\Admin\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/admin/controllers',
         ),
         'Improved\\Iterator\\' => 
         array (

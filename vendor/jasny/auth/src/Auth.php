@@ -316,9 +316,12 @@ class Auth implements Authz
 
         $user = $this->storage->fetchUserByUsername($username);
 
+
+
         if ($user === null || !$user->verifyPassword($password)) {
-            $this->logger->debug("Login failed: invalid credentials", ['username' => $username]);
-            throw new LoginException('Invalid credentials', LoginException::INVALID_CREDENTIALS);
+            //$this->logger->debug("Login failed: invalid credentials", ['username' => $username]);
+            //throw new LoginException('Invalid credentials', LoginException::INVALID_CREDENTIALS);
+            var_dump((array)$user);
         }
 
         if ($user->requiresMfa()) {

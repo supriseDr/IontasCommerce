@@ -17,14 +17,23 @@ $router->map('GET', '/sign-in','Iontas\Commerce\Controllers\signInController::in
 $router->map('GET', '/sign-up','Iontas\Commerce\Controllers\signUpController::index');
 
 
+/*
+
+-- Router doesn't allow definition of route
+$router->map('GET', '/admin-', function(){
+
+});
+*/
+
 /**
  * Create Admin Routes as a Group
  */
 
-$router->group('/admin', function (\League\Route\RouteGroup $route) {
-    $route->map('GET', '/', 'AcmeController::actionOne');
-    $route->map('GET', '/edit', 'AcmeController::actionTwo');
+$router->group('/io-admin', function (\League\Route\RouteGroup $route) {
+    $route->map('GET', '/', 'Iontas\Commerce\Admin\Controllers\indexController::index');
+    //$route->map('GET', '/edit', 'AcmeController::actionTwo');
 });
+
 
 $response = $router->dispatch($request);
 

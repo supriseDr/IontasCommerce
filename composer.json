@@ -15,7 +15,9 @@
     "autoload": {
         "psr-4": {
             "Iontas\\Commerce\\Controllers\\": "controllers",
-            "Iontas\\Commerce\\Models\\": "models"
+            "Iontas\\Commerce\\Admin\\Controllers\\": "admin/controllers",
+            "Iontas\\Commerce\\Models\\": "models",
+            "Iontas\\Commerce\\Models\\Repository\\": "models/repositories"
         },
         "psr-0": {"": "models/"}
     }

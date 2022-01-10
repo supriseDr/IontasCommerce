@@ -37,6 +37,9 @@ use Jasny\Auth\Auth;
 
 use Jasny\Auth\Authz\Levels;
 
+//AuthRepository Setup
+use Iontas\Commerce\Models\Repository\AuthStorage;
+
 /**Configure Doctrine ORM */
 $isDevMode = true;
 
@@ -59,6 +62,19 @@ $conn = array(
 
 $entityManager = EntityManager::create($conn, $config);
 
+/** Configure Jasny Auth */
+$levels = new Levels(['user'=> 1, 'assistance'=> 10, 'admin'=> 100]);
+
+$storage = new AuthStorage($entityManager);//AuthStorage class might need revision
+
+$auth = new Auth($levels, $storage);
+
+//start session
+session_start();
+
+//initialize auth
+$auth->initialize();
+
 /** 
  * Set blade views dir and cache dir
  */
@@ -71,10 +87,11 @@ $entityManager = EntityManager::create($conn, $config);
 
 $container = new League\Container\Container;
 
-$container->add(Iontas\Commerce\Controllers\indexController::class)->addArgument($blade)->addArgument($entityManager);
+$container->add(Iontas\Commerce\Controllers\indexController::class)->addArgument($blade)->addArgument($entityManager)->addArgument($auth);
 $container->add(Iontas\Commerce\Controllers\singleItemController::class)->addArgument($blade)->addArgument($entityManager);
 $container->add(Iontas\Commerce\Controllers\signInController::class)->addArgument($blade)->addArgument($entityManager);
 $container->add(Iontas\Commerce\Controllers\signUpController::class)->addArgument($blade)->addArgument($entityManager);
+$container->add(Iontas\Commerce\Admin\Controllers\indexController::class)->addArgument($blade)->addArgument($entityManager);
 
 $strategy = (new ApplicationStrategy)->setContainer($container);
  

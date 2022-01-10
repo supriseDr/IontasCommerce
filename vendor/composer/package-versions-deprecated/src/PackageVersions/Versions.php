@@ -97,7 +97,7 @@ final class Versions
   'symfony/var-exporter' => 'v5.4.2@2360c8525815b8535caac27cbc1994e2fa8644ba',
   'tebazil/db-seeder' => '1.0.1@13d322a9397654946c5f3e0ec6d163e714850f77',
   'voku/portable-ascii' => '1.5.6@80953678b19901e5165c56752d087fc11526017c',
-  '__root__' => 'dev-main@5a0875e232e608091a89997f9043b38e6f53a650',
+  '__root__' => 'dev-main@0b5d1222d2dc31065452e8aa05103800418f8344',
 );
 
     private function __construct()
