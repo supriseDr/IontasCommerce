@@ -33,6 +33,7 @@ $product->setCreatedAt();
 $product->setUpdatedAt();
 
 
+
 $entityManager->persist($product);
 $entityManager->flush();
 

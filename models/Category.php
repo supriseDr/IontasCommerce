@@ -13,20 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
 
 use Illuminate\Support\Facades\Date;
 
-//use array collections for relationships, Many(products)ToOne(category)
+//use array collections for relationships, One(category)ToMany(products)
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-//use categories
-
-use Iontas\Commerce\Models\Category;
-
 /**
  * @ORM\Entity
- * @ORM\Table(name="products")
+ * @ORM\Table(name="categories")
  */
 
- class Product
+ class Category
  {
 
     /**
@@ -36,6 +32,7 @@ use Iontas\Commerce\Models\Category;
      */
 
     private $id;
+
 
     /**
      * @ORM\Column(type="string")
@@ -47,13 +44,23 @@ use Iontas\Commerce\Models\Category;
      * @ORM\Column(type="string")
      */
 
-    private $imageUrl;
+    private $slug;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="string")
      */
 
-    private $price;
+    private $cover;
+
+    /**
+     * Create a relationship with Parent ID for the category
+     */
+
+     /**
+     * @ORM\Column(type="integer")
+     */
+    
+    private $parent_id;
 
     /**
      * @ORM\Column(type="boolean")
@@ -67,11 +74,6 @@ use Iontas\Commerce\Models\Category;
 
     private $description;
 
-    /**
-     * @ORM\Column(type="string")
-     */
-
-    private $shortDescription;
 
     /**
      * @ORM\Column(type="datetime")
@@ -83,22 +85,18 @@ use Iontas\Commerce\Models\Category;
      */
     private $updatedAt;
 
-    /**
-     * Categories for relationship mapping
-     */
-    
      /**
-     * @ORM\ManyToOne(targetEntity="Iontas\Commerce\Models\Category", inversedBy="category")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Iontas\Commerce\Models\Product",  mappedBy="product")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      */
+    private $product;
 
-    private $category;
 
     public function __construct()
     {
-        /** Has relationships to categories */
+         /** Has relationships to products */
 
-        $this->category = new ArrayCollection();
+         $this->products = new ArrayCollection();
     }
 
     // get product id
@@ -116,37 +114,11 @@ use Iontas\Commerce\Models\Category;
 
     // set product name
 
-    public function setImageUrl(string $url):void{
-
-        $this->imageUrl = $url;
-    }
-
-    // get product name
-
-    public function getImageUrl(): string
-    {
-        return $this->imageUrl;
-    }
-
-    // set product name
-
     public function setName(string $name):void{
 
         $this->name = $name;
     }
 
-     // get product price
-
-     public function getPrice(): float
-     {
-         return $this->price;
-     }
- 
-     // set product price
- 
-     public function setPrice(float $price):void{
-         $this->price = $price;
-     }
 
       // get product active
 
@@ -161,6 +133,38 @@ use Iontas\Commerce\Models\Category;
         $this->active = $boolean;
     }
 
+
+    // set product active
+
+    public function setSlug(string $slug):void{
+        $this->slug = $slug;
+    }
+
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+
+    public function setCover(string $cover):void{
+        $this->cover = $cover;
+    }
+
+    public function getCover(): string
+    {
+        return $this->cover;
+    }
+
+    public function setParentId(int $id):void{
+        $this->parent_id = $id;
+    }
+
+    public function getParentId(): string
+    {
+        return $this->parent_id;
+    }
+
+
     public function getDescription(): string
     {
         return $this->description;
@@ -172,20 +176,6 @@ use Iontas\Commerce\Models\Category;
 
         $this->description = $description;
     }
-
-     // get product shortDescription
-
-     public function getShortDescription():string
-     {
- 
-         return $this->shortDescription;
-     }
-
-    public function setShortDescription(string $shortDescription): void
-    {
-       $this->shortDescription = $shortDescription;
-    }
-
 
      // get product createdAt
 
@@ -215,17 +205,16 @@ use Iontas\Commerce\Models\Category;
           $this->updatedAt = new \DateTime("now");
       }
 
-      //assign product to categories
-      public function assignToCategory(Category $category)
+      //assign category to product
+      public function assignToProduct(Product $product)
       {
-          $this->category[] = $category;
+          $this->products[] = $product;
       }
   
-      public function getCategories()
+      public function getProducts()
       {
-          return $this->category;
+          return $this->products;
       }
-  
 
    
  }

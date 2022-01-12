@@ -9,7 +9,7 @@ use Jasny\Auth\LoginException;
 try {
     //$auth->login($_POST['Kenneth Leannon'], $_POST['password']);
     $auth->login('Andre Skiles', 'password');
-    var_dump($auth->isLoggedIn());
+    //var_dump($auth->isLoggedIn());
 } catch (LoginException $exception) {
     http_response_code(400);
     echo $exception->getMessage();

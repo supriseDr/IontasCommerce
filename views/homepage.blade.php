@@ -4,6 +4,8 @@
     {{--header component with stylesheets--}}
     @include('./components/header')
     <body>  
+    {{--Include Javascript and Defer--}}
+    <script src="assets/js/alpine.min.js" defer></script>
     {{--navbar component--}}
     @include('./components/navbar')
     {{--Products List Front End--}}

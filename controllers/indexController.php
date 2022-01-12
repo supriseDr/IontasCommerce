@@ -75,6 +75,8 @@ class indexController
         //$products = $this->productRepository->findAll();
         $products = $this->productRepository->findBy(['active' => 1]);
 
+        //$products = [];
+
         // ...
         $response = new Response;
         $response->getBody()->write($this->blade->make('homepage',['foo'=>'bar','products'=>$products,'auth'=>$this->auth])->render());

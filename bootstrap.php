@@ -73,7 +73,7 @@ $auth = new Auth($levels, $storage);
 session_start();
 
 //initialize auth
-$auth->initialize();
+//$auth->initialize(); initialization handled by middleware
 
 /** 
  * Set blade views dir and cache dir
@@ -89,7 +89,7 @@ $container = new League\Container\Container;
 
 $container->add(Iontas\Commerce\Controllers\indexController::class)->addArgument($blade)->addArgument($entityManager)->addArgument($auth);
 $container->add(Iontas\Commerce\Controllers\singleItemController::class)->addArgument($blade)->addArgument($entityManager);
-$container->add(Iontas\Commerce\Controllers\signInController::class)->addArgument($blade)->addArgument($entityManager);
+$container->add(Iontas\Commerce\Controllers\signInController::class)->addArgument($blade)->addArgument($entityManager)->addArgument($auth);
 $container->add(Iontas\Commerce\Controllers\signUpController::class)->addArgument($blade)->addArgument($entityManager);
 $container->add(Iontas\Commerce\Admin\Controllers\indexController::class)->addArgument($blade)->addArgument($entityManager);
 
@@ -104,6 +104,10 @@ $router = (new Router)->setStrategy($strategy);
 $request = ServerRequestFactory::fromGlobals(
     $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES
 );
+
+/**Require the Middlewares File */
+
+require_once __DIR__ .'/middlewares/AuthMiddleware.php';
 
 /**Bootstraping application routes */
 

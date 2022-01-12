@@ -1,5 +1,8 @@
 <?php 
 
+//add the middleware
+$router->middleware($middleware);
+
 // map a route namespace is autoloaded
 
 $router->map('GET', '/','Iontas\Commerce\Controllers\indexController::index');
@@ -11,6 +14,15 @@ $router->map('GET', '/single-item','Iontas\Commerce\Controllers\singleItemContro
 // Sign-In Route
 
 $router->map('GET', '/sign-in','Iontas\Commerce\Controllers\signInController::index');
+
+// Sign-In Post form
+
+$router->map('POST', '/sign-in','Iontas\Commerce\Controllers\signInController::login');
+
+// Sign-Out  form
+
+$router->map('POST', '/sign-out','Iontas\Commerce\Controllers\signInController::logout');
+
 
 // Sign-Up Route
 

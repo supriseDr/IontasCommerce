@@ -18,6 +18,11 @@ use Jenssegers\Blade\Blade;
 //Use Entity Manager to Query Repositories
 use Doctrine\ORM\EntityManager;
 
+//Auth Exception
+use Jasny\Auth\LoginException;
+
+use Jasny\Auth\Auth;
+
 class signInController
 {
     /**
@@ -36,14 +41,20 @@ class signInController
 
     //protected $productRepository;
 
+    //Auth
+
+    protected $auth;
+
     /**
      * Constructor for Dependency Injection
      */
-    public function __construct(Blade $blade,EntityManager $entityManager)
+    public function __construct(Blade $blade,EntityManager $entityManager, Auth $auth)
     {
         $this->blade = $blade;
 
         $this->entityManager = $entityManager;
+
+        $this->auth = $auth;
 
        // $this->productRepository = $this->entityManager->getRepository('Iontas\Commerce\Models\Product');
 
@@ -69,6 +80,33 @@ class signInController
         $response->getBody()->write($this->blade->make('sign-in',['foo'=>'bar'])->render());
         return $response;
 
+    }
+
+    /**
+     * Login Method
+     */
+    public function login(ServerRequestInterface $request){
+        /**
+         * Catch the form username and password via request argument
+         */
+        try {
+            //$auth->login($_POST['Kenneth Leannon'], $_POST['password']);
+            $this->auth->login($_POST['username'],$_POST['password']);
+        } catch (LoginException $exception) {
+            http_response_code(400);
+            echo $exception->getMessage();
+        }
+        http_response_code(303);
+        header("Location: /");
+        //echo "You're being redirected to <a href='/dashboard'>the dashboard</a>.";
+
+    }
+
+    public function logout(ServerRequestInterface $request){
+
+        $this->auth->logout();
+       // http_response_code(303);
+       // header("Location: /");
     }
 
 }

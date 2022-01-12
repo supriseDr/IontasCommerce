@@ -11,6 +11,7 @@
         "tebazil/db-seeder": "^1.0",
         "fzaninotto/faker": "^1.9",
         "jasny/auth": "^2.2"
+        
     },
     "autoload": {
         "psr-4": {
@@ -20,6 +21,10 @@
             "Iontas\\Commerce\\Models\\Repository\\": "models/repositories"
         },
         "psr-0": {"": "models/"}
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
-
 }
