@@ -91,7 +91,8 @@ $container->add(Iontas\Commerce\Controllers\indexController::class)->addArgument
 $container->add(Iontas\Commerce\Controllers\singleItemController::class)->addArgument($blade)->addArgument($entityManager);
 $container->add(Iontas\Commerce\Controllers\signInController::class)->addArgument($blade)->addArgument($entityManager)->addArgument($auth);
 $container->add(Iontas\Commerce\Controllers\signUpController::class)->addArgument($blade)->addArgument($entityManager);
-$container->add(Iontas\Commerce\Admin\Controllers\indexController::class)->addArgument($blade)->addArgument($entityManager);
+$container->add(Iontas\Commerce\Admin\Controllers\indexController::class)->addArgument($blade)->addArgument($entityManager)->addArgument($auth);
+$container->add(Iontas\Commerce\Controllers\cartController::class)->addArgument($blade)->addArgument($entityManager)->addArgument($auth);
 
 $strategy = (new ApplicationStrategy)->setContainer($container);
  

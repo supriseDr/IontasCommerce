@@ -9,13 +9,13 @@ require_once "bootstrap.php";
 /**
  * Find Product By Id First
  */
-$id = 3 ;
+$id = 1 ;
 
 $product = $entityManager->find("Iontas\Commerce\Models\Product", $id);
 
 $category = $entityManager->find("Iontas\Commerce\Models\Category", 1);
 
-$category->assignToProduct($product);
+$product->assignToCategory($category);
 
 $entityManager->persist($category);
 $entityManager->flush();

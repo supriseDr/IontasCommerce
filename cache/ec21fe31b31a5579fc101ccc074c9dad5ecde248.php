@@ -1,4 +1,9 @@
 <!-- component -->
+<?php echo $__env->make('./components/header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('./components/navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+<script src="assets/js/alpine.min.js" defer></script>
+
 <div class="flex justify-center my-6">
     <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
       <div class="flex-1">
@@ -211,4 +216,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div><?php /**PATH /home/jing/Documents/IontasCommerce/views/cart.blade.php ENDPATH**/ ?>

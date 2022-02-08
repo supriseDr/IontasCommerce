@@ -64,6 +64,19 @@ use Jasny\Auth\UserInterface;
      */
     private $updatedAt;
 
+    /**
+     * cart relationship in the database, there's one cart to one user
+     * @ORM\OneToOne(targetEntity="Iontas\Commerce\Models\Cart", mappedBy="user")
+     */
+    private $cart;
+
+    public function __construct()
+    {
+        /**
+         * Construct A cart relationship
+         */
+    }
+
     // get user id
     public function getId(): int
     {

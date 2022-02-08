@@ -12,6 +12,6 @@ if ($products === null) {
 
 foreach ($products as $product) {
    
-   var_dump($product->getCategories());
+   var_dump($product->getCategories()->getName());
   
 }

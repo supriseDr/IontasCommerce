@@ -21,10 +21,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="tags")
+ * @ORM\Table(name="reviews")
  */
 
- class Tag
+ class Review
  {
 
     /**
@@ -35,22 +35,37 @@ use Doctrine\Common\Collections\ArrayCollection;
 
     private $id;
 
+    /**Relationship 
+     * A review is linked to a user
+    */
+
+    /**
+     * Relationship
+     * A review is linked to a product
+     */
+
+    /**
+     * @ORM\Column(type="string")
+     */
+
+    private $comment;
+
      /**
-     * @ORM\Column(type="string")
-     */
-    private $name;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $slug;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $active;
 
-     /**
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $rating;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $ip_address;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
@@ -59,7 +74,6 @@ use Doctrine\Common\Collections\ArrayCollection;
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
-
 
 
  

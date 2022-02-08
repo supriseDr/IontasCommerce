@@ -70,6 +70,13 @@ use Doctrine\Common\Collections\ArrayCollection;
      */
     private $updatedAt;
 
+	/**
+     * One Cart has One User.
+     * @ORM\OneToOne(targetEntity="Iontas\Commerce\Models\User", inversedBy="cart")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
   /**
    * Constructor takes array of 
    */

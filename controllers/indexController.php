@@ -73,7 +73,7 @@ class indexController
         /**Store Products in Array and Pass them to the front */
 
         //$products = $this->productRepository->findAll();
-        $products = $this->productRepository->findBy(['active' => 1]);
+       $products = $this->productRepository->findBy(['active' => 1]);
 
         //$products = [];
 

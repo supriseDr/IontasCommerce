@@ -46,6 +46,17 @@ $router->group('/io-admin', function (\League\Route\RouteGroup $route) {
     //$route->map('GET', '/edit', 'AcmeController::actionTwo');
 });
 
+/**
+ * Create Cart Group Routes
+ */
+$router->group('/cart', function(\League\Route\RouteGroup $route){
+
+    //get cart page
+    $route->map('GET','/','Iontas\Commerce\Controllers\cartController::index');
+    $route->map('POST','/add/{id:number}','Iontas\Commerce\Controllers\cartController::addItem');
+    //need to add other actions
+
+});
 
 $response = $router->dispatch($request);
 

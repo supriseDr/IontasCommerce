@@ -88,7 +88,7 @@ use Iontas\Commerce\Models\Category;
      */
     
      /**
-     * @ORM\ManyToOne(targetEntity="Iontas\Commerce\Models\Category", inversedBy="category")
+     * @ORM\ManyToOne(targetEntity="Iontas\Commerce\Models\Category", inversedBy="products")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
 
@@ -98,7 +98,7 @@ use Iontas\Commerce\Models\Category;
     {
         /** Has relationships to categories */
 
-        $this->category = new ArrayCollection();
+        //$this->category = new ArrayCollection();
     }
 
     // get product id
@@ -218,7 +218,7 @@ use Iontas\Commerce\Models\Category;
       //assign product to categories
       public function assignToCategory(Category $category)
       {
-          $this->category[] = $category;
+          $this->category = $category;
       }
   
       public function getCategories()

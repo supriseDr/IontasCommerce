@@ -21,10 +21,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="tags")
+ * @ORM\Table(name="reviews")
  */
 
- class Tag
+ class Coupon
  {
 
     /**
@@ -35,22 +35,49 @@ use Doctrine\Common\Collections\ArrayCollection;
 
     private $id;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+
+    private $code;
+
      /**
-     * @ORM\Column(type="string")
-     */
-    private $name;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $slug;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $active;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $value;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $use_times;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $used_times;
+
      /**
+     * @ORM\Column(type="datetime")
+     */
+    private $startAt;
+
+     /**
+     * @ORM\Column(type="datetime")
+     */
+    private $endAt;
+
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
@@ -59,7 +86,6 @@ use Doctrine\Common\Collections\ArrayCollection;
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
-
 
 
  
